@@ -5,6 +5,7 @@ import '../../app/app_model.dart';
 import '../../app/connectivity_model.dart';
 import '../../app_config.dart';
 import '../../common/data/audio_type.dart';
+import '../../common/view/cast_button.dart';
 import '../../common/view/icons.dart';
 import '../../common/view/like_icon.dart';
 import '../../common/view/theme.dart';
@@ -117,6 +118,12 @@ class BottomPlayer extends StatelessWidget with WatchItMixin {
                         ),
                         onPressed: () => appModel.setFullWindowMode(true),
                       ),
+                      if (audio?.audioType == AudioType.radio)
+                        CastButton(
+                          active: active,
+                          audio: audio,
+                          // color: iconColor,
+                        ),
                     ],
                   ),
                 )
